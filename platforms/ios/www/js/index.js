@@ -47,12 +47,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
     scanBarcode: function(){
-        alert('Hello');
-        cloudSky.zBar.scan({}, function() {
-            alert('success');
-        }, function() {
-            alert('failure')
-        })
+
     }
 };
 
@@ -63,5 +58,9 @@ var myBtn = document.getElementById('scan-button');
 
 //add event listener
 myBtn.addEventListener('click', function(event) {
-    app.scanBarcode();
+    cloudSky.zBar.scan({}, function() {
+        alert('success');
+    }, function() {
+        alert('failure')
+    });
 });
